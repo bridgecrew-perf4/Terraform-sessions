@@ -1,0 +1,5 @@
+env = "qa"
+instance_type = "t3.micro"
+ami = "ami-05d72852800cbf29e"
+key_name = "mac-key"
+region = "us-east-2"

@@ -1,0 +1,5 @@
+env = "dev1"
+instance_type = "t2.micro"
+ami = "ami-0742b4e673072066f"
+key_name = "Mackey-Public key"
+region = "us-east-1"
