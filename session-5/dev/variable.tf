@@ -1,6 +1,6 @@
 variable "env" {      #env is local name
   default     = "dev" #dev is default value
-  type        = string
+  type        = string # string is exicting so it doe not need ""
   description = "Name of the enivorment"
 }
 
