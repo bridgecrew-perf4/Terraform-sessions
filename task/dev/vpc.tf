@@ -4,7 +4,7 @@ resource "aws_vpc" "task-vpc" {
 
   tags = {
     Name = "${var.env}-vpc"
-    Project = var.project_name
+    // Project = var.project_name
     Environment = var.env
     
   }
@@ -41,7 +41,7 @@ resource "aws_route_table" "public-route-table" {
   }
 } 
 
-####### Public Subnet ############
+// ####### Public Subnet ############
 
 resource "aws_subnet" "public-subnet-1" {
   vpc_id     = aws_vpc.task-vpc.id
@@ -170,7 +170,7 @@ resource "aws_subnet" "private-subnet-3" {
 
 }
 
-########## Private Route Table Association ##############
+// ########## Private Route Table Association ##############
 
 resource "aws_route_table_association" "private-subnet-1" {
   subnet_id      = aws_subnet.private-subnet-1.id

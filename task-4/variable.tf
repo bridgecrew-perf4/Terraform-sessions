@@ -15,3 +15,37 @@ variable "instance_type" {
   description = "type of instance"
 }
 
+variable "cidr_block" {
+    type = string
+    description = "this is route table  cidr_block"
+}
+
+variable "cidr_block_public_subnet1" {
+type = string
+description = "This is public subnet cidr"
+}
+
+variable "cidr_block_public_subnet2" {
+type = string
+description = "This is public subnet cidr"
+}
+
+variable "cidr_block_public_subnet3" {
+type = string
+description = "This is public subnet cidr"
+}
+
+variable "cidr_block_private_subnet1" {
+type = string
+description = "This is public subnet cidr"
+}
+
+variable "cidr_block_private_subnet2" {
+type = string
+description = "This is public subnet cidr"
+}
+
+variable "cidr_block_private_subnet3" {
+type = string
+description = "This is public subnet cidr"
+}
