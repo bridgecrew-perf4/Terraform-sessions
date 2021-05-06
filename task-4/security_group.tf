@@ -1,7 +1,7 @@
 resource "aws_security_group" "webserver_sg" {
   name        = "${var.env}-webserver-sg"
   description = "Allow HTTP traffic"
-# VPC in here if you use not Default VPC. 
+  vpc_id = "aws_vpc.task4-vpc.id" # VPC in here if you use not Default VPC. 
 }
 
 resource "aws_security_group_rule" "http_from_lb" {

@@ -4,7 +4,7 @@ resource "aws_lb" "webserver-alb" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb-sg.id]
  
-  subnets            = data.aws_subnet_ids.default.ids
+  subnets            = data.aws_subnet_ids.task-subnet.ids
 }
 
 resource "aws_lb_listener" "webserver-listerner" {
@@ -20,7 +20,7 @@ resource "aws_lb_listener" "webserver-listerner" {
 resource "aws_security_group" "alb-sg" {
   name        = "${var.env}-alb-sg"
   description = "Allow HTTP traffic"
-# VPC in here if you use not Default VPC. 
+  vpc_id = "aws_vpc.task4-vpc.id" # VPC in here if you use custom Default VPC. 
 }
 
 resource "aws_security_group_rule" "http_ingress" {

@@ -8,7 +8,7 @@ health_check_type         = "EC2"
 // force_delete              = true
 //   placement_group           = aws_placement_group.test.id
 launch_configuration      = aws_launch_configuration.webserver_lc.name
-vpc_zone_identifier       = data.aws_subnet_ids.default.ids # subnet set on avail zone, vpc identifier means subnet
+vpc_zone_identifier       = data.aws_subnet_ids.task-subnet.ids # subnet set on avail zone, vpc identifier means subnet
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_lb" {
