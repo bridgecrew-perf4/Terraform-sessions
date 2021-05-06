@@ -11,8 +11,8 @@ launch_configuration      = aws_launch_configuration.webserver_lc.name
 vpc_zone_identifier       = data.aws_subnet_ids.default.ids # subnet set on avail zone, vpc identifier means subnet
 }
 
-resource "aws_autoscaling_attachment" "asg_attachment_lb" {
-  autoscaling_group_name = aws_autoscaling_group.webserver-autosg.id
+resource "aws_autoscaling_attachment" "asg_attachment_lb" { #HERE LOAD BALANCER attached TO AutoScaling Group
+  autoscaling_group_name = aws_autoscaling_group.webserver-autosg.id # Even it says "Name" HERE is needed ID. 
   alb_target_group_arn   = aws_lb_target_group.webserver-tg.arn
 }
 
