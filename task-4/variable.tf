@@ -49,3 +49,32 @@ variable "cidr_block_private_subnet3" {
 type = string
 description = "This is public subnet cidr"
 }
+
+variable "public-subnet-1" {
+  type = string
+  description = "This is pub-subnet-1"
+}
+
+variable "public-subnet-2" {
+  type = string
+  description = "This is pub-subnet-2"
+}
+
+variable "public-subnet-3" {
+  type = string
+  description = "This is pub-subnet-3"
+}
+variable "private-subnet-1" {
+  type = string
+  description = "This is pri-subnet-1"
+}
+
+variable "private-subnet-2" {
+  type = string
+  description = "This is pri-subnet-2"
+}
+
+variable "private-subnet-3" {
+  type = string
+  description = "This is pri-subnet-3"
+}

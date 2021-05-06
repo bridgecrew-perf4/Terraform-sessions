@@ -1,11 +1,8 @@
-data "aws_vpc" "task4-vpc" {
- 
-    default = false # it saying this is default vpc
-}
 
-data "aws_subnet_ids" "task-subnet" {
-  vpc_id = data.aws_vpc.task4-vpc.id # fatching subnet ids using vpc ids
-}
+
+// data "aws_subnet_ids" "task-subnet" {
+//   vpc_id = data.aws_vpc.task4-vpc.id # fatching subnet ids using vpc ids
+// }
 
 data "aws_ami" "amazon_linux2" {
     most_recent = true

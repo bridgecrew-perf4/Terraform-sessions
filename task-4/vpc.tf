@@ -40,7 +40,8 @@ resource "aws_route_table" "public-route-table" {
 resource "aws_subnet" "public-subnet-1" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_public_subnet1
-
+  map_public_ip_on_launch = true
+  availability_zone = var.public-subnet-1
   tags = {
     Name = "${var.env}-public-subnet-1"
     
@@ -53,7 +54,8 @@ resource "aws_subnet" "public-subnet-1" {
 resource "aws_subnet" "public-subnet-2" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_public_subnet2
-
+  map_public_ip_on_launch = true
+  availability_zone = var.public-subnet-2
   tags = {
     Name = "${var.env}-public-subnet-2"
     
@@ -66,6 +68,8 @@ resource "aws_subnet" "public-subnet-2" {
 resource "aws_subnet" "public-subnet-3" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_public_subnet3
+  map_public_ip_on_launch = true
+  availability_zone = var.public-subnet-3
 
   tags = {
     Name = "${var.env}-public-subnet-3"
@@ -125,6 +129,8 @@ resource "aws_route_table" "private-route-table" {
 resource "aws_subnet" "private-subnet-1" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_private_subnet1
+  map_public_ip_on_launch = false
+  availability_zone = var.private-subnet-1
 
   tags = {
     Name = "${var.env}-private-subnet-1"
@@ -138,6 +144,8 @@ resource "aws_subnet" "private-subnet-1" {
 resource "aws_subnet" "private-subnet-2" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_private_subnet2
+  map_public_ip_on_launch = false
+  availability_zone = var.private-subnet-2
 
   tags = {
     Name = "${var.env}-private-subnet-2"
@@ -151,7 +159,8 @@ resource "aws_subnet" "private-subnet-2" {
 resource "aws_subnet" "private-subnet-3" {
   vpc_id     = aws_vpc.task4-vpc.id
   cidr_block = var.cidr_block_private_subnet3
-
+  map_public_ip_on_launch = false
+  availability_zone = var.private-subnet-3
   tags = {
     Name = "${var.env}-private-subnet-3"
     
