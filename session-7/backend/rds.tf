@@ -13,6 +13,9 @@ resource "aws_db_instance" "rds" {
   # Combinations of all these 3 things. var.env = dev dev==dev true. var.env=prod prod==dev false
   skip_final_snapshot  = true # If QA,Pro env it's false. Dev=true. If it's true blow identifier needed.
   final_snapshot_identifier = var.snapshot ==true ? null : "${var.env}-snapshot"
+tags = local.common_tags
+
+
 }
 
 resource "aws_security_group" "rds-sg" {
@@ -26,6 +29,7 @@ resource "aws_security_group_rule" "rds-ingress" {
   from_port         = 3306
   to_port           = 3306
   protocol          = "tcp"
+  // self              = true # self means it resourcing itself.
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.rds-sg.id
 }
@@ -39,3 +43,4 @@ resource "aws_security_group_rule" "webserver_egress" {
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.rds-sg.id
 }
+

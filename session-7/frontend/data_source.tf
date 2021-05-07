@@ -28,3 +28,13 @@ data "template_file" "webserver" {
       }
 
 }
+
+data "terraform_remote_state" "rds" {
+    backend = "s3"
+    config = {
+        bucket = "terraforms3-bucket-solongo"
+        key = "session-7/backend.tfstate"
+        region = "us-east-1"
+    }
+}
+
