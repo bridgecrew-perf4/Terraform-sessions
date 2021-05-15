@@ -17,4 +17,4 @@ public-subnet-1 = "us-east-1a"
 
 private-subnet-1 = "us-east-1a" 
 private-subnet-2 = "us-east-1b" 
-private-subnet-3 = "us-east1c"
+private-subnet-3 = "us-east-1c"
